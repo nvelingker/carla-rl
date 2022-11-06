@@ -1,6 +1,6 @@
 Pillow
 numpy
-protobuf
+protobuf==3.20.0
 pygame
 matplotlib
 future
@@ -9,3 +9,4 @@ scikit-video
 pyyaml
 gym
 IPython
+opencv-python
