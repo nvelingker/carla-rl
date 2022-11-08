@@ -1,12 +1,12 @@
 Pillow
 numpy
-protobuf==3.20.0
+protobuf==3.19.6
 pygame
 matplotlib
 future
 tensorboardX
 scikit-video
 pyyaml
-gym
+gym==0.9.6
 IPython
 opencv-python
