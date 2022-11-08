@@ -31,7 +31,7 @@ class CarlaEnv(object):
                  random_seed=0,
                  exp_suite_name='TrainingSuite',
                  reward_class_name='RewardCarla',
-                 host='127.0.0.1',
+                 host='server',
                  port=2000,
                  city_name='Town01',
                  subset=None,
