@@ -378,6 +378,7 @@ class CarlaEnv(object):
 
         while True:
             try:
+                self.logger.info("Trying to make client on host {}".format(host))
                 self.logger.info("Trying to make client on port {}".format(port))
                 self._client = CarlaClient(host, port, timeout=100)
                 self._client.connect()
