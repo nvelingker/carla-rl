@@ -31,7 +31,7 @@ class CarlaEnv(object):
                  random_seed=0,
                  exp_suite_name='TrainingSuite',
                  reward_class_name='RewardCarla',
-                 host='server',
+                 host='127.0.0.1',
                  port=2000,
                  city_name='Town01',
                  subset=None,
@@ -378,13 +378,12 @@ class CarlaEnv(object):
 
         while True:
             try:
-                self.logger.info("Trying to make client on host {}".format(host))
-                self.logger.info("Trying to make client on port {}".format(port))
+                self.logger.info("Trying to make client on host {} port {}".format(host, port))
                 self._client = CarlaClient(host, port, timeout=100)
                 self._client.connect()
                 self._client.load_settings(CarlaSettings(QualityLevel='Low'))
                 self._client.start_episode(0)
-                self.logger.info("Successfully made client on port {}".format(port))
+                self.logger.info("Successfully made client on host {} port {}".format(host, port))
                 break
             except TCPConnectionError as error:
                 self.logger.debug('Got TCPConnectionError..sleeping for 1')
