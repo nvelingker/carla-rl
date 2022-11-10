@@ -6,6 +6,8 @@ def get_args():
     parser = argparse.ArgumentParser(description='CARLA RL Training Script')
     parser.add_argument('--experiment-name', type=str, default='debug')
     parser.add_argument('--config', type=str, default=None, help='path to config file')
+    parser.add_argument('--starting-port', type=int, default=2000,
+                        help='starting_port')
     parser.add_argument('--log-interval', type=int, default=10,
                         help='log interval, one log per n updates (default: 10)')
     parser.add_argument('--video-interval', type=int, default=100,
