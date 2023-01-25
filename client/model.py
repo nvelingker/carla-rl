@@ -94,6 +94,7 @@ class NNBase(nn.Module):
     def is_recurrent(self):
         return self._recurrent
 
+
     @property
     def recurrent_hidden_state_size(self):
         if self._recurrent:

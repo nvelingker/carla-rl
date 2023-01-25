@@ -5,7 +5,7 @@ import torch
 def get_args():
     parser = argparse.ArgumentParser(description='CARLA RL Training Script')
     parser.add_argument('--experiment-name', type=str, default='debug')
-    parser.add_argument('--config', type=str, default=None, help='path to config file')
+    parser.add_argument('--config', type=str, default="/app/carla-rl/client/config/a2c.yaml", help='path to config file')
     parser.add_argument('--starting-port', type=int, default=2000,
                         help='starting_port')
     parser.add_argument('--log-interval', type=int, default=10,
