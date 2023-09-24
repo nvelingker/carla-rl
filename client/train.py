@@ -81,9 +81,9 @@ def main():
         os.makedirs(eval_log_dir)
     except OSError:
         pass
-
     now = datetime.datetime.now()
     experiment_name = args.experiment_name + '_' + now.strftime("%Y-%m-%d_%H-%M-%S")
+    logger = setup_carla_logger(args.save_dir, experiment_name)
 
     # Create checkpoint file
     save_dir_model = os.path.join(args.save_dir, 'model', experiment_name)
@@ -102,7 +102,6 @@ def main():
     writer = SummaryWriter(os.path.join(args.save_dir, 'tensorboard', experiment_name))
 
     # Logger that writes to STDOUT and a file in the save_dir
-    logger = setup_carla_logger(args.save_dir, experiment_name)
 
     device = torch.device("cuda:0" if args.cuda else "cpu")
     norm_reward = not config.no_reward_norm

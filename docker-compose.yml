@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  client:
+    image: carla-client
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    # command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 manage.py runserver 0.0.0.0:8000 --nothreading --noreload"]
+    # ports:
+    #   - 8000:8000
+    #   - 5678:5678
+  server0:
+    image: carla-server
+  server1:
+    image: carla-server
+  server2:
+    image: carla-server
+  server3:
+    image: carla-server
+  server4:
+    image: carla-server
+  server5:
+    image: carla-server
+  server6:
+    image: carla-server
+  server7:
+    image: carla-server
+

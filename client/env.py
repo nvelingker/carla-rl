@@ -378,12 +378,12 @@ class CarlaEnv(object):
 
         while True:
             try:
-                self.logger.info("Trying to make client on port {}".format(port))
+                self.logger.info("Trying to make client on host {} port {}".format(host, port))
                 self._client = CarlaClient(host, port, timeout=100)
                 self._client.connect()
                 self._client.load_settings(CarlaSettings(QualityLevel='Low'))
                 self._client.start_episode(0)
-                self.logger.info("Successfully made client on port {}".format(port))
+                self.logger.info("Successfully made client on host {} port {}".format(host, port))
                 break
             except TCPConnectionError as error:
                 self.logger.debug('Got TCPConnectionError..sleeping for 1')
